@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yuify | Orders</title>
+    <link rel="shortcut icon" href="y.png" type="image/x-icon">
+</head>
+<body>
+    <div class="container">
+        <div class="ioadfhioadf">
+            <p class="qiwueosidf02hsd-fsdofnso9df">Orders</p>
+            <p class="ioquwensdf-2nosdfnsoidfno">Let us know how do you want your website to look like</p>
+            <a href="index.html"><p class="qwiujsdfs-dfnio2-sndiofnsdof">Yuify</p></a>
+        </div>
+        <div class="iouqweniosdf-2d-fsnodfnosdf">
+            <div class="qoiwesnfiosdfnio23-sdinofnsidogd">
+                <div class="iquweniosdf-qnowi-sdfnosdngoidf">
+                    <p>Name:</p>
+                    <input type="text" class="qwejiosdf-2sdfsdf" id="nameInput">
+                </div>
+                <div class="iouqwe-sdfi2-ndf93020sdf">
+                    <p>Surname:</p>
+                    <input type="text" class="iquweoisf-2900-nsiofniosd920sdpf" id="surnameInput">
+                </div>
+                <div class="ioqwue-sfniosdf-dnfogdfiog">
+                    <p>E-mail*:</p>
+                    <input type="text" class="niosjf9osd-fn1o-sdfnoisdf" id="EmailInput">
+                </div>
+            </div>
+
+            <div class="qiwuesdf-02noisdf-wnfndgdf">
+                <div class="ioquwe-sdfniosdf-2noisfiosdf">
+                    <p>Phone Number:</p>
+                    <input type="text" class="qwiouensodf-2jsdf-nfmoignsdfg" id="phoneNumberInput">
+                </div>
+
+                <div class="iqweihsodf-sndof-sdfwef">
+                    <p>Message...</p>
+                    <input type="text" class="nqowinisodf-2oqwu90-dnoifgndofg" id="messageInput">
+                </div>
+            </div>
+        </div>
+        <button class="iquweniosdf-2niosdf-sdfnosndf">Send</button>
+    </div>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,900;1,600;1,800&display=swap');
+        </style>
+
+        <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+</script>
+
+        <script>
+
+            emailjs.init("qzRiudGtrAyNWreaS");
+            const sendButton = document.querySelector('.iquweniosdf-2niosdf-sdfnosndf');
+            sendButton.addEventListener('click', () => {
+                const nameInput = document.getElementById('nameInput').value;
+                const surnameInput = document.getElementById('surnameInput').value;
+                const emailInput = document.querySelector('.niosjf9osd-fn1o-sdfnoisdf').value;
+                const phoneNumberInput = document.getElementById('phoneNumberInput').value;
+                const messageInput = document.getElementById('messageInput').value;
+                sendButton.innerHTML = 'Sending...';
+                console.log(nameInput);
+                debugger;
+                emailjs.send("service_9rrxlsf", "template_ea5rnwo", {
+                    message: messageInput,
+                    email: emailInput,
+                    phone_number: phoneNumberInput,
+                    name: nameInput,
+                    surname: surnameInput
+                }).then (function () {
+                    sendButton.style.width = "180px";
+                    sendButton.innerHTML = 'Message has been send!';
+                }), function (error) {
+                    sendButton.innerHTML = 'Message sending failed!';
+                    console.log(error);
+                }
+            });
+        </script>
+
+    <style>
+
+        html {
+            overflow-x: hidden;
+        }
+
+        .container {
+            padding-top: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            font-family: Poppins;
+            font-weight: 300;
+            font-size: 14px;
+        }
+            .iouqweniosdf-2d-fsnodfnosdf {
+                width: 800px;
+                height: 600px;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                padding-left: 1250px;
+                padding-right: 1250px;
+                padding-top: 100px;
+            }
+
+            .qoiwesnfiosdfnio23-sdinofnsidogd {
+                background-color: #fff;
+                height: 100%;
+                width: 300px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                color: #000;
+                margin: 0;
+            }
+
+            .qiwuesdf-02noisdf-wnfndgdf {
+                background-color: #fff;
+                height: 100%;
+                width: 300px;
+                margin: 0;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                color: #000;
+            }
+
+            .qwejiosdf-2sdfsdf,
+            .iquweoisf-2900-nsiofniosd920sdpf,
+            .niosjf9osd-fn1o-sdfnoisdf,
+            .qwiouensodf-2jsdf-nfmoignsdfg,
+            .nqowinisodf-2oqwu90-dnoifgndofg {
+                border: none;
+                background-color: transparent;
+                outline: none;
+                border-bottom: 2px solid #000;
+                font-family: Poppins;
+            }
+
+            .iquweniosdf-2niosdf-sdfnosndf {
+                background-color: #40C7C0;
+                width: 135px;
+                height: 32px;
+                color: #fff;
+                border: none;
+                outline: none;
+                position: relative;
+                bottom: 300px;
+                cursor: pointer;
+            }
+
+            .iquweniosdf-2niosdf-sdfnosndf:hover {
+                transition: all 0.2s ease-in-out;
+                opacity: 0.7;
+            }
+
+            .ioquwensdf-2nosdfnsoidfno {
+                color: #ccc;    
+                font-weight: 200;
+            }
+
+            .qiwueosidf02hsd-fsdofnso9df {
+                margin-left: 140px;
+                font-size: 30px;
+            }
+
+            .qwiujsdfs-dfnio2-sndiofnsdof {
+                position: absolute;
+                left: 30px;
+                top: 14px;
+                cursor: pointer;
+            }
+
+            @media only screen and (max-width: 800px) {
+                .container {
+                    margin-left: 360px;
+                }
+            }
+
+            @media only screen and (max-width: 510px) {
+                html {
+                    max-width: 510px !important;
+                    overflow: hidden;
+                }
+                
+                .container {
+                    margin-left: 185px;
+                }
+
+                .qiwueosidf02hsd-fsdofnso9df {
+                    margin-left: 140px;
+                }
+
+                .ioquwensdf-2nosdfnsoidfno {
+                    text-wrap: nowrap;
+                }
+
+                .iouqweniosdf-2d-fsnodfnosdf {
+                    width: 510px;
+                    padding-left: 60px;
+                    padding-right: 60px;
+                }
+            }
+
+            @media only screen and (max-width: 1440px) {
+                .iouqweniosdf-2d-fsnodfnosdf {
+                    padding-left: 900px;
+                }
+
+                .ioadfhioadf {
+                    margin-left: -400px;
+                }
+
+                .iquweniosdf-2niosdf-sdfnosndf {
+                    margin-left: -400px;
+                }
+            } 
+
+            @media only screen and (max-width: 426px) {
+
+                body {
+                    max-width: 426px;
+                    margin: 0 auto;
+                    box-sizing: border-box;
+                }
+
+                html,body {
+                    width: 100%;
+                    height: 100%;
+                    margin: 0px;
+                    padding: 0px;
+                    overflow-x: hidden; 
+                    }
+
+                .ioadfhioadf {
+                    margin-right: -200px;
+                }
+
+                .ioquwensdf-2nosdfnsoidfno {
+                    max-width: 300px;
+                    text-wrap: wrap;
+                    text-align: center;
+                }
+
+                .qiwueosidf02hsd-fsdofnso9df {
+                    margin-left: 106px;
+                }
+
+                .iouqweniosdf-2d-fsnodfnosdf {
+                    margin-left: 0px;
+                    padding-left: 120px;
+                }
+
+                .iquweniosdf-2niosdf-sdfnosndf {
+                    margin-top: 140px;
+                    margin-left: -200px;
+                }
+
+                .qiwuesdf-02noisdf-wnfndgdf {
+                    position: relative;
+                    top: 240px;
+                    left: -256px;
+                }
+            }
+
+            @media only screen and (max-width: 350px) {
+                .iouqweniosdf-2d-fsnodfnosdf {
+                    padding-left: 80px;
+                }
+
+                .iquweniosdf-2niosdf-sdfnosndf {
+                    left: 40px;
+                }
+
+                .ioadfhioadf {
+                    margin-left: -320px;
+                    margin-top: 60px;
+                }
+            }
+    </style>
+</body>
+</html>
